@@ -1,8 +1,3 @@
-function preload() {
-  console.log("preload");
-  game.preload();
-}
-
 function setup() {
   console.log("setup");
   createCanvas(displayWidth, displayHeight);
