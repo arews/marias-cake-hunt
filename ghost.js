@@ -1,6 +1,6 @@
 class Ghost {
   constructor() {
-    this.x = 80;
+    this.x = 100;
     this.velocity = 0;
     this.gravity = 0.2;
     this.jumpCount = 0;
