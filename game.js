@@ -18,15 +18,14 @@ class Game {
   setup() {
     this.player.setup();
     this.ghost.setup();
-    song.loop();
+    gameSong.loop();
   }
 
   draw() {
     this.background.draw();
     this.player.draw();
     this.ghost.draw();
-
-    if (frameCount > 300 && frameCount % 100 === 0) {
+    if (frameCount > 150 && frameCount % 100 === 0) {
       this.boosters.push(new Boosters());
     }
 
@@ -44,7 +43,7 @@ class Game {
       }
     });
 
-    if (frameCount > 400 && frameCount % 135 === 0) {
+    if (frameCount > 400 && frameCount % 130 === 0) {
       this.slowers.push(new Slowers());
     }
 
@@ -62,18 +61,21 @@ class Game {
       }
     });
 
-    if (frameCount >= 240) {
+    if (frameCount >= 2400) {
       this.cake.draw();
     }
 
     if (this.isCollision(this.cake, this.player)) {
       console.log("You win!");
       noLoop();
+      image(charWins, 320, 150, 200, 200);
     }
 
     if (this.isCollision(this.cake, this.ghost)) {
       console.log("You loose!");
       noLoop();
+      image(ebbaWins, 300, 100, 600, 600);
+      text("Ebba ate the cake, and is now a happy dog!", 500, 350);
     }
   }
 
