@@ -11,4 +11,10 @@ It's a pretty straight forward run and jump game, with a five-layered parallax f
 I also had good use of this code snippet from Svenja, for animating images:
 https://github.com/Svemakawe/P5_SimpleAnimation/blob/master/js/main.js
 
-All the styling is done directly in the js-files, using P5. No added css. 
+The font is a free font calles Press Start 2P, which you can find here: https://www.dafont.com/press-start-2p.font
+
+The sounds are bougth on itch.io, and are called Yal's sound effect pack: https://yaru.itch.io/retro-sound-effect-pack-1/download/14T007OZcHbWyh1NU1PDFF1bLSjgCJlHDyn4WkOW
+
+The background music for the start screen and the game are two free 8 bit songs found here: https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6
+
+All the styling is done directly in the js-files, using P5. No added css.

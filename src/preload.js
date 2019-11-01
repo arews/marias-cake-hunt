@@ -13,6 +13,8 @@ let looseSong;
 let jump;
 let supersooster;
 let superslower;
+let superslowsound;
+let superboostsound;
 
 function preload() {
   console.log("preload");
@@ -32,4 +34,6 @@ function preload() {
   jump = loadSound("assets/jump.wav");
   superBooster = loadImage("assets/pepsi-pack.png");
   superSlower = loadImage("assets/coke-pack.png");
+  superslowsound = loadSound("assets/superslow.wav");
+  superboostsound = loadSound("assets/superboost.wav");
 }

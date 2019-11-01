@@ -82,7 +82,7 @@ class Game {
       if (this.isCollision(superbooster, this.player)) {
         console.log("Superboost");
         this.player.x += 150;
-        powerup.play();
+        superboostsound.play();
         this.superboosters.splice(index, 1);
       }
     });
@@ -101,7 +101,7 @@ class Game {
       if (this.isCollision(superslower, this.player)) {
         console.log("Superslow");
         this.player.x -= 150;
-        ouch.play();
+        superslowsound.play();
         this.superslowers.splice(index, 1);
       }
     });
