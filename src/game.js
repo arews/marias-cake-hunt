@@ -6,6 +6,8 @@ class Game {
     this.cake = new Cake();
     this.boosters = [];
     this.slowers = [];
+    this.superboosters = [];
+    this.superslowers = [];
   }
 
   preload() {
@@ -27,6 +29,7 @@ class Game {
     this.background.draw();
     this.player.draw();
     this.ghost.draw();
+
     if (frameCount > 300 && frameCount % 70 === 0) {
       this.boosters.push(new Boosters());
     }
@@ -62,6 +65,44 @@ class Game {
         this.player.x += -50;
         ouch.play();
         this.slowers.splice(index, 1);
+      }
+    });
+
+    if (frameCount > 1200 && frameCount % 170 === 0) {
+      this.superboosters.push(new Superboosters());
+    }
+
+    this.superboosters.forEach((superbooster, index) => {
+      superbooster.draw();
+
+      if (superbooster.x + superbooster.width <= 0) {
+        this.superboosters.splice(index, 1);
+      }
+
+      if (this.isCollision(superbooster, this.player)) {
+        console.log("Superboost");
+        this.player.x += 150;
+        powerup.play();
+        this.superboosters.splice(index, 1);
+      }
+    });
+
+    if (frameCount > 1300 && frameCount % 190 === 0) {
+      this.superslowers.push(new Superslowers());
+    }
+
+    this.superslowers.forEach((superslower, index) => {
+      superslower.draw();
+
+      if (superslower.x + superslower.width <= 0) {
+        this.superslowers.splice(index, 1);
+      }
+
+      if (this.isCollision(superslower, this.player)) {
+        console.log("Superslow");
+        this.player.x -= 150;
+        ouch.play();
+        this.superslowers.splice(index, 1);
       }
     });
 
