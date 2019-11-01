@@ -1,16 +1,15 @@
 class Slowers {
   constructor() {
-    this.x = width; // canvas width
+    this.x = random(width, 200);
+    this.y = random(0, 200);
 
-    this.y = random(250, 500);
-    /*   this.x = random(0, height); */
-
-    this.width = 60;
-    this.height = 100;
+    this.width = 40;
+    this.height = 65;
   }
 
   draw() {
     image(coke, this.x, this.y, this.width, this.height);
-    this.x -= 6;
+    this.x -= 3;
+    this.y += 1;
   }
 }

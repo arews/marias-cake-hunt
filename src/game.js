@@ -27,7 +27,7 @@ class Game {
     this.background.draw();
     this.player.draw();
     this.ghost.draw();
-    if (frameCount > 150 && frameCount % 100 === 0) {
+    if (frameCount > 300 && frameCount % 70 === 0) {
       this.boosters.push(new Boosters());
     }
 
@@ -41,12 +41,12 @@ class Game {
       if (this.isCollision(booster, this.player)) {
         console.log("Boost");
         this.player.x += 50;
-        slurp.play();
+        powerup.play();
         this.boosters.splice(index, 1);
       }
     });
 
-    if (frameCount > 400 && frameCount % 130 === 0) {
+    if (frameCount > 400 && frameCount % 80 === 0) {
       this.slowers.push(new Slowers());
     }
 
@@ -60,12 +60,12 @@ class Game {
       if (this.isCollision(slower, this.player)) {
         console.log("Slow");
         this.player.x += -50;
-        scream.play();
+        ouch.play();
         this.slowers.splice(index, 1);
       }
     });
 
-    if (frameCount >= 320) {
+    if (frameCount >= 2800) {
       this.cake.draw();
     }
 
@@ -96,9 +96,10 @@ class Game {
       textFont(fontRegular);
       text("Ebba ate the cake,", 950, 400);
       text("and is happy!", 950, 430);
-      text("... but you are not.", 940, 460);
-      text("Refresh the browser", 950, 540);
-      text("to play again.", 950, 570);
+      text("... but you are not.", 940, 500);
+      textSize(24);
+      text("Refresh the browser", 950, 650);
+      text("to play again.", 950, 680);
     }
   }
 

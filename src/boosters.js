@@ -1,13 +1,10 @@
 class Boosters {
   constructor() {
-    this.x = width; // canvas width
-    this.y = height;
+    this.x = random(width, 200);
+    this.y = random(0, 50);
 
-    this.y = random(250, 500);
-    /*   this.x = random(0, height); */
-
-    this.width = 100;
-    this.height = 160;
+    this.width = 70;
+    this.height = 120;
     this.img = loadImage("assets/pepsi-tilted-right.png");
   }
 
@@ -15,6 +12,7 @@ class Boosters {
 
   draw() {
     image(this.img, this.x, this.y, this.width, this.height);
-    this.x -= 6;
+    this.x -= 3;
+    this.y += 1;
   }
 }

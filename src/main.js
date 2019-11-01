@@ -15,9 +15,10 @@ function draw() {
     fill(0);
     textSize(22);
     textFont(fontRegular);
-    text("Get the cake before Ebba the dog eats it!", 260, 580);
+    text("Get the cake before Ebba the dog eats it!", 260, 560);
+    text("Jump with the SPACE key!", 440, 610);
     textSize(25);
-    text("Press enter to start", 450, 680);
+    text("Press ENTER to start", 450, 680);
     image(introImage, 400, 150, 600, 350);
     if (!menuSong.isPlaying()) {
       menuSong.loop();
@@ -32,7 +33,7 @@ function draw() {
 function keyPressed() {
   if (keyCode === 32) {
     game.player.jump();
-    
+    jump.play();
   }
   if (keyCode === 13) {
     gameStart = 1;
